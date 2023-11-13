@@ -10,7 +10,7 @@ for (i = 0; environ[i]; i++)
 { 
 tmp = _strdup(environ[i]);
 
-key = strtok(tmp, "*");
+key = strtok(tmp, "=");
 
 if (_strcmp(key, variable) == 0)
 {
