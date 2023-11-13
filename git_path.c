@@ -33,5 +33,11 @@ if (stat(full_cmd, &st) == 0)
 free(path_env);
 return (full_cmd);
 }
+free(full_cmd), full_cmd = NULL;
+
+dir = strtok(NULL, ":");
+}
+}
+free(path_env);
 return (NULL);
 }
