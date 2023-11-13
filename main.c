@@ -4,7 +4,7 @@ int main(int ac, char **argv)
 {
     char *line = NULL;
     char **command = NULL;
-    int status = 0;
+    int status = 0, index = 0 ;
     /*int i;*/
     (void)ac;
      
@@ -17,6 +17,8 @@ int main(int ac, char **argv)
             return (status);
         }
         /*free(line);*/
+	index++;
+	
         command = tokenizer(line);
         if (!command)
            continue;
@@ -28,8 +30,8 @@ int main(int ac, char **argv)
          }
 
          free(command), command = NULL;*/
-
-        status = _execute(command, argv);
+      
+        status = _execute(command, argv, index);
         
     }
 }

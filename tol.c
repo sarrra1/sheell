@@ -2,7 +2,7 @@
 
 void print_error(char *name, char *cmd, int idx)
 {
-char *index, mssg[] = ": not found";
+char *index, mssg[] = ": not found\n";
 index = _itoa(idx);
 
 write(STDERR_FILENO, name, _strlen(name));
