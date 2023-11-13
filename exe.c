@@ -18,6 +18,7 @@ if (child == 0)
 {
 if (execve(command[0], command, environ) == -1)
 {
+	printf("Full command: %s\n", full_cmd);
 free(full_cmd), full_cmd = NULL;
 /*perror(argv[0]);*/
 freearray(command);
@@ -27,6 +28,7 @@ freearray(command);
 else
 {
 waitpid(child, &status, 0);
+printf("Full command: %s\n", full_cmd);
 freearray(command);
 free(full_cmd), full_cmd = NULL;
     }
