@@ -31,14 +31,14 @@ void exit_shell(char **command, char **argv, int *status, int index)
         }
         else
         {
-            index = _itoa(idx);
+            idx = _itoa(index);
             write(STDOUT_FILENO, argv[0], _strlen(argv[0]));
             write(STDOUT_FILENO, ":", 2);
             write(STDOUT_FILENO, idx, _strlen(idx));
             write(STDOUT_FILENO, mssg, _strlen(mssg));
             write(STDOUT_FILENO, command[1], _strlen(command[1]));
             write(STDOUT_FILENO, "\n", 1);
-            free(index);
+            free(idx);
             freearray(command);
             (*status) = 2;
             return;
