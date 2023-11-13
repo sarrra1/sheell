@@ -10,6 +10,7 @@ int is_builtin(char *command)
         if (_strcmp(command, builtins[i]) == 0)
             return (1);
     }
+     return 0;
 }
 
 void handle_builtin(char **command, char **argv, int *status, int index)
