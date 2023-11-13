@@ -22,7 +22,9 @@ int main(int ac, char **argv)
         command = tokenizer(line);
         if (!command)
            continue;
-
+           if (is_builtin(command[0]))
+            handle_builtin(command, argv, status, index);
+        else 
         /*for (i=0; command[i]; i++)
         {   
             printf("%s\n", command[i]);
