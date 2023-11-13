@@ -45,6 +45,9 @@ void exit_shell(char **command, char **argv, int *status, int index)
             return;
         }
     }
+     freearray(command);
+    exit(exit_value);
+
 }
 
 void print_env(char **command, int *status)
