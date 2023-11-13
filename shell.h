@@ -11,10 +11,16 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 #include <stddef.h>
-
+#include <stddef.h>
 #define DELIM " \t\n"
 extern char **environ;
 
+int is_positive_number(char *str);
+int _atoi(char *str);
+int is_builtin(char *command);
+void handle_builtin(char **command, char **argv, int *status, int idx);
+void exit_shell(char **command, char **argv, int *status, int idx);
+void print_env(char **command, int *status);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
