@@ -26,15 +26,7 @@ int main(int ac, char **argv)
         if (is_builtin(command[0]))
             handle_builtin(command, argv, &status, index);
         else
-        /*for (i=0; command[i]; i++)
-        {
-            printf("%s\n", command[i]);
-            free(command[i]), command[i] = NULL;
-         }
-
-         free(command), command = NULL;*/
-
-        status = _execute(command, argv, index);
+	{status = _execute(command, argv, index);}
 
     }
 }

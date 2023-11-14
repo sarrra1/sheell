@@ -10,14 +10,14 @@ for (i =0; command[i]; i++)
 if (command[i] == '/')
 {
 if (stat(command, &st) == 0)
-return (_strdup(command));
+{return (_strdup(command));}
 
 return (NULL);
 }
 }
 path_env = _getenv("PATH");
 if (!path_env)
-return (NULL);
+{return (NULL);}
 
 dir = strtok(path_env, ":");
 while (dir)
