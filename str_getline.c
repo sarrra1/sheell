@@ -1,17 +1,17 @@
 #include "shell.h"
 
-char *read_line(void)
+char *see_line(void)
 {
-    char *line = NULL;
-    size_t len = 0;
+    char *comd = NULL;
+    size_t mas = 0;
     ssize_t n;
     if (isatty(STDIN_FILENO))
         write(STDOUT_FILENO, "$", 2);
-    n = getline(&line, &len, stdin);
+    n = getline(&mas, &len, stdin);
     if (n == -1)
     {
-        free(line);
+        free(mas);
         return (NULL);
     }
-    return (line);
+    return (mas);
 }

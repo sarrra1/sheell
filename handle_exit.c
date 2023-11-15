@@ -20,6 +20,7 @@ void handle_builtin(char **command, char **argv, int *status, int index)
     else if (_strcmp(command[0], "env") == 0)
         print_env(command, status);
 }
+
 void exit_shell(char **command, char **argv, int *status, int index)
 {
     int exit_value = (*status);

@@ -10,14 +10,20 @@ for (i =0; command[i]; i++)
 if (command[i] == '/')
 {
 if (stat(command, &st) == 0)
-{return (_strdup(command));}
-
+return _strdup(command);
 return (NULL);
 }
 }
 path_env = _getenv("PATH");
 if (!path_env)
-{return (NULL);}
+{
+    perror("PATH environment variable not found");
+    return (NULL);
+}
+
+printf("PATH: %s\n", path_env);
+
+/*return (NULL);*/
 
 dir = strtok(path_env, ":");
 while (dir)
@@ -39,5 +45,5 @@ dir = strtok(NULL, ":");
 }
 }
 free(path_env);
-return (NULL);
+     return (NULL);
 }
